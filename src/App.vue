@@ -1,17 +1,23 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello></hello>
+    <!-- <login></login> -->
+    <register></register>
+    <!-- <stories></stories> -->
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+// import Login from './components/Login';
+import Register from './components/Register';
+// import Stories from './components/Stories';
 
 export default {
   name: 'app',
   components: {
-    Hello,
+    // Login,
+    Register,
+    // Stories,
   },
 };
 </script>
