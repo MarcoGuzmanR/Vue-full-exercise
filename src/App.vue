@@ -1,25 +1,53 @@
 <template>
-  <div id="app">
+  <div id="app" class='container'>
     <img src="./assets/logo.png">
-    <!-- <login></login> -->
-    <register></register>
-    <!-- <stories :stories='stories'></stories> -->
+    <h1>Welcome to dynamic Components!</h1>
+    <ul class='nav nav-tabs'>
+      <li v-for='page in pages' :key='page' :class="isActivePage(page) ? 'active' : ''">
+        <a @click='setPage(page)'>{{ page | capitalize }}</a>
+      </li>
+    </ul>
+    <component :is='activePage'></component>
   </div>
 </template>
 
 <script>
-// import Login from './components/Login';
-import Register from './components/Register';
-// import Stories from './components/Stories';
+  import Vue from 'vue';
+  import Login from './components/Login';
+  import Register from './components/Register';
+  import Stories from './components/Stories';
 
-export default {
-  name: 'app',
-  components: {
-    // Login,
-    Register,
-    // Stories,
-  },
-};
+  Vue.filter('capitalize', value => value.charAt(0).toUpperCase() + value.substr(1));
+
+  // Vue.filter('capitalize', function(value){
+  //   return value.charAt(0).toUpperCase() + value.substr(1);
+  // });
+
+  export default {
+    components: {
+      Login,
+      Register,
+      Stories,
+    },
+    data() {
+      return {
+        pages: [
+          'stories',
+          'register',
+          'login',
+        ],
+        activePage: 'stories',
+      };
+    },
+    methods: {
+      setPage(newPage) {
+        this.activePage = newPage;
+      },
+      isActivePage(page) {
+        return this.activePage === page;
+      },
+    },
+  };
 </script>
 
 <style>

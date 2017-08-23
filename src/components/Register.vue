@@ -1,5 +1,5 @@
 <template>
-  <div id='register' class='container'>
+  <div id='register'>
     <h2>Register Form</h2>
     <input class='form-control' placeholder='First Name' />
     <input class='form-control' placeholder='Last Name' />
