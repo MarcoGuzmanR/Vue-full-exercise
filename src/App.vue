@@ -3,7 +3,7 @@
     <img src="./assets/logo.png">
     <!-- <login></login> -->
     <register></register>
-    <!-- <stories></stories> -->
+    <!-- <stories :stories='stories'></stories> -->
   </div>
 </template>
 

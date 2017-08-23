@@ -19,8 +19,5 @@
     components: {
       Famous,
     },
-    created() {
-      console.log('register');
-    },
   };
 </script>
